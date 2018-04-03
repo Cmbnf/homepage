@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+
+<script>
+  'use strict';
+
+  var config = {
+    categories: [
+      { name: "Vie quotidienne", commands: [
+        { key: 'rss', name: 'RSS', url: 'http://rss.cmbnf.fr/' },
+        { key: 'bag', name: 'Framabag', url: 'https://framabag.org' },
+        { key: 'sh', name: '# Shaarli', url: 'http://shaarli.cmbnf.fr/', search:'?searchterm=' },
+        { key: 'o', name: 'OwnCloud', url: 'https://webcloud.zaclys.com/' },
+        { key: 'wp', name: 'WordPress', url: 'http://www.pangurban.fr/zcdrualv/' },
+        { key: 'pole', name: 'Pole Emploi', url: 'https://www.pole-emploi.fr' },
+        { key: 'meteo17', name: 'Météo 17', url: 'http://france.lachainemeteo.com/meteo-france/ville/previsions-meteo-la-rochelle-2496-0.php' },
+        { key: 'meteo85', name: 'Météo 85', url: 'http://france.lachainemeteo.com/meteo-france/ville/previsions-meteo-la-roche-sur-yon-2494-0.php' },
+      ] },
+        
+      { name: "Recherche", commands: [
+        { key: 'i', name: '# Google Images', url: 'https://www.google.fr', search: '/#q=', add: '&safe=active&tbm=isch' },
+        { key: 'w', name: '# Wikipédia', url: 'https://fr.wikipedia.org/wiki', search: '/' },
+        { key: 'wen', name: '# Wikipedia (en)', url: 'https://en.wikipedia.org/wiki', search: '/' },
+        { key: 'v', name: '# Vikidia', url: 'https://fr.vikidia.org/wiki', search: '/' },
+        { key: 'y', name: '# Youtube', url: 'https://www.youtube.com', search: '/results?search_query=' },
+        { key: 'map', name: '# Maps', url: 'https://www.google.fr/maps/search', search: '/' },
+        { key: 'tineye', name: '# TinEye', url: 'https://www.tineye.com/', search: '/search/?query=' },
+        { key: 'ubuntu', name: 'Ubuntu', url: 'https://doc.ubuntu-fr.org/' },
+      ] },
+        
+      { name: "Dictionnaires", commands: [
+        { key: 'en', name: '# WordRef EN-FR', url: 'http://www.wordreference.com', search: '/enfr/' },
+        { key: 'fr', name: '# WordRef FR-EN', url: 'http://www.wordreference.com', search: '/fren/' },
+        { key: 'wr', name: '# Wiktionnaire', url: 'https://fr.wiktionary.org/wiki', search: '/' },
+        { key: 'lt', name: '# Le Littré', url: 'http://www.littre.org', search: '/definition/' },
+        { key: 'sy', name: '# Synonymes', url: 'http://www.synonymes.com', search: '/synonyme.php?mot=' },
+        { key: 'cj', name: '# Conjugaison', url: 'http://leconjugueur.lefigaro.fr', search: '/conjugaison/verbe/' },
+      ] },
+		    
+      { name: "Réseaux", commands: [
+        { key: 'fb', name: 'Facebook', url: 'https://fr-fr.facebook.com/' },
+        { key: 'pin', name: 'Pinterest', url: 'https://fr.pinterest.com/' },
+        { key: 'tw', name: 'Twitter', url: 'https://twitter.com/Cm_Bnf/' },
+        { key: 'li', name: 'LinkedIn', url: 'http://fr.linkedin.com/in/camillebonenfant' },
+        { key: 'via', name: 'Viadeo', url: 'http://viadeo.fr/profile/camillebonenfant' },
+        { key: 'sc', name: '# Sens Critique', url: 'https://www.senscritique.com/', search:'/recherche?query=' },
+        { key: 'ba', name: 'Babelio', url: 'http://www.babelio.com/' },
+      ] },
+        
+      { name: "Outils", commands: [
+        { key: 'timer', name: 'Timer Tab', url: 'http://www.timer-tab.com/' },
+        { key: 'canva', name: 'Canva', url: 'https://www.canva.com' },
+        { key: 'framapic', name: 'Framapic', url: 'https://framapic.org/' },
+        { key: 'optimiz', name: 'Optimizilla', url: 'http://optimizilla.com/' },
+        { key: 'pdf', name: 'I love PDF', url: 'http://www.ilovepdf.com/' },
+        { key: 'shimg', name: 'Shaarlimg', url: 'http://cmbnf.fr/projets/shaarlimg' },
+        { key: 'thumb', name: 'Youtube thumbnail', url: 'https://boingboing.net/features/getthumbs.html' },
+      ] },
+        
+      { name: "Apprentissage", commands: [
+        { key: 'oc', name: 'Open Classrooms', url: 'https://openclassrooms.com/' },
+        { key: 'codeac', name: 'Code Academy', url: 'https://www.codecademy.com/fr' },
+        { key: 'w3schools', name: 'W3 Schools', url: 'https://www.w3schools.com/' },
+        { key: '#html', name: '# HTML doc', url: 'https://developer.mozilla.org/fr/', search: 'search?topic=html&q=' },
+        { key: '#css', name: '# CSS doc', url: 'https://developer.mozilla.org/fr/', search: 'search?topic=css&q=' },
+        { key: '#js', name: '# JS doc', url: 'https://developer.mozilla.org/fr/', search: 'search?topic=js&q=' },
+        { key: '#jq', name: '# jQuery doc', url: 'http://api.jquery.com/', search: '?s=' },
+      ] },
+        
+      { name: "Code : outils", commands: [
+        { key: 'git', name: '# GitHub', url: 'https://github.com', search: '/search?q=' },
+        { key: 'codepen', name: '# Codepen', url: 'https://codepen.io/', search: 'search/pens?limit=all&type=type-pens&q=' },
+        { key: 'fiddle', name: 'JS Fiddle', url: 'https://jsfiddle.net/' },
+      ] },
+        
+      { name: "Code : validation", commands: [
+        { key: 'w3c', name: 'W3C validator', url: 'https://validator.w3.org/' },
+        { key: 'caniuse', name: 'Can I use', url: 'https://caniuse.com/' },
+        { key: 'prefix?', name: 'Should I prefix', url: 'http://shouldiprefix.com/' },
+        { key: 'autoprefix', name: 'Autoprefixer', url: 'https://autoprefixer.github.io/' },
+        { key: 'fecheck', name: 'Front-end checklist', url: 'https://frontendchecklist.io/' },
+      ] },
+        
+      { name: "Code : responsive", commands: [
+        { key: 'respons', name: 'Responsinator', url: 'http://www.responsinator.com' },
+        { key: 'respcheck', name: 'Responsive Checker', url: 'http://responsivedesignchecker.com/' },
+        { key: 'amires', name: 'Am I responsive ?', url: 'http://ami.responsivedesign.is/' },
+      ] },
+        
+      { name: "Code : minify", commands: [
+        { key: 'min', name: 'Minifier', url: 'https://www.minifier.org/' },
+        { key: 'cssmin', name: 'CSS minifier', url: 'https://cssminifier.com/' },
+        { key: 'jsmin', name: 'JS Compress', url: 'https://jscompress.com/' },
+        { key: 'unmin', name: 'Unminify', url: 'http://unminify.com/' },
+      ] },
+        
+      { name: "Code : lorem ipsum", commands: [
+        { key: 'lorem', name: 'Lorem Ipsum', url: 'http://www.faux-texte.com/' },
+        { key: 'catipsum', name: 'Cat Ipsum', url: 'http://www.catipsum.com/' },
+        { key: 'cupipsum', name: 'Cupcake Ipsum', url: 'http://www.cupcakeipsum.com/' },
+        { key: 'wikipsum', name: 'Wikipsum', url: 'http://www.wikipsum.com/' },
+      ] },
+        
+      { name: "Ressources : polices", commands: [
+        { key: 'font', name: 'Font Library', url: 'https://fontlibrary.org/fr' },
+        { key: 'gfonts', name: 'Google Fonts', url: 'https://www.google.com/fonts' },
+        { key: 'fontsq', name: 'Font Squirrel', url: 'https://www.fontsquirrel.com/' },
+      ] },
+        
+      { name: "Ressources : icônes", commands: [
+        { key: 'fontaw', name: 'Font Awesome', url: 'https://fontawesome.com/icons?d=gallery' },
+        { key: 'fontawcss', name: 'Font Awesome CSS', url: 'http://astronautweb.co/snippet/font-awesome/' },
+        { key: 'flaticon', name: 'Flaticon', url: 'https://www.flaticon.com/' },
+        { key: 'iconmonstr', name: 'Icon Monstr', url: 'https://iconmonstr.com/' },
+        { key: 'ionicons', name: 'Ionicons', url: 'http://ionicons.com/' },
+        { key: 'entypo', name: 'Entypo', url: 'http://www.entypo.com/' },
+      ] },
+        
+      { name: "Ressources : couleurs", commands: [
+        { key: 'flat', name: 'Flat UI colors', url: 'http://flatuicolors.com/' },
+        { key: 'ui', name: 'Get UI colors', url: 'http://getuicolors.com/' },
+        { key: 'coolors', name: 'Coolors', url: 'https://coolors.co/' },
+        { key: 'w3colors', name: 'W3Schools colors', url: 'https://www.w3schools.com/colors/colors_names.asp' },
+        { key: '0to255', name: '0to255', url: 'http://www.0to255.com' },
+        { key: 'gradient', name: 'UI gradient', url: 'https://uigradients.com/' },
+        /*{ key: 'paletton', name: 'Paletton', url: 'http://paletton.com/' },
+        { key: 'adobecolor', name: 'Adobe Color CC', url: 'https://color.adobe.com/fr/create/color-wheel/' },*/
+      ] },
+        
+      { name: "Ressources : patterns", commands: [
+        { key: 'subtle', name: 'Subtle patterns', url: 'https://www.toptal.com/designers/subtlepatterns/' },
+        { key: 'hero', name: 'Hero patterns', url: 'http://www.heropatterns.com/' },
+        { key: 'patternlib', name: 'The Pattern library', url: 'http://thepatternlibrary.com/' },
+      ] },
+        
+      { name: "Ressources : images", commands: [
+        { key: 'commons', name: '# Wikimedia Commons', url: 'https://commons.wikimedia.org/wiki', search: '/' },
+        { key: 'flickr', name: '# Flickr', url: 'https://www.flickr.com/search/?license=2%2C3%2C4%2C5%2C6%2C9', search: '&text=' },
+        { key: 'pixabay', name: '# Pixabay', url: 'https://pixabay.com/fr', search: '/photos/?q='},
+        { key: 'librestock', name: '# LibreStock', url: 'http://librestock.com', search: '/search/?query=' },
+        { key: 'unsplash', name: '# Unsplash', url: 'https://unsplash.com', search: '/search/' },
+        { key: 'pexels', name: '# Pexels', url: 'https://www.pexels.com', search: '/search/' },
+        { key: 'every', name: '# Everypixel', url: 'https://everypixel.com', search: '/search?q=' },
+        { key: 'thestocks', name: 'The Stocks', url: 'http://thestocks.im/' },
+        { key: 'duotone', name: 'Duotone', url: 'https://duotone.shapefactory.co/' },
+        { key: 'foodies', name: 'Foodies Feed', url: 'https://www.foodiesfeed.com/' },
+        { key: 'mazwai', name: 'Mazwai', url: 'http://mazwai.com' },
+      ] },
+        
+      { name: "Code : inspiration", commands: [
+        { key: 'templated', name: 'Templated', url: 'https://templated.co/' },
+        { key: 'htmlup', name: 'HTML5 Up', url: 'https://html5up.net/' },
+        { key: 'collectui', name: 'Collect UI', url: 'http://collectui.com/' },
+        { key: 'onepage', name: 'One Page Love', url: 'https://onepagelove.com/' },
+        { key: 'codrops', name: 'Codrops', url: 'https://tympanus.net/codrops/all-articles/' },
+        { key: 'csstricks', name: 'CSS tricks', url: 'https://css-tricks.com/' },
+        { key: 'codyhouse', name: 'Codyhouse', url: 'https://codyhouse.co/library/' },
+        { key: 'calltoidea', name: 'Calltoidea', url: 'http://calltoidea.com/' },
+        { key: 'dribble', name: 'Dribble', url: 'https://dribbble.com/' },
+        { key: 'behance', name: 'Behance', url: 'https://www.behance.net/' },
+        { key: 'siteinspi', name: 'Site Inspire', url: 'https://www.siteinspire.com/' },
+        { key: 'flatdesign', name: 'Flatdsgn', url: 'http://flatdsgn.com/' },
+        { key: 'lapa', name: 'Landing Page Inspiration', url: 'https://www.lapa.ninja/' },
+        { key: 'awwwards', name: 'Awwwards', url: 'https://www.awwwards.com/' },
+      ] },
+        
+      { name: "Téléchargement : films", commands: [
+        { key: 'zt', name: 'Zone Téléchargement', url: 'https://ww1.zone-telechargement1.com/homep.html' },
+        { key: 'zt2', name: 'Zone Téléchargement 2', url: 'https://www.zone-telechargement2.top/' },
+        { key: 'x', name: 'Extreme Download', url: 'https://www.extreme-down.im/home.html' },
+        { key: 'frenchddl', name: 'French DDL', url: 'https://www.frenchddl.com/' },
+        { key: 'topan', name: 'Topanalyse', url: 'http://www.topanalyse.org' },
+        { key: 'telefilm1', name: 'Télécharger Films', url: 'http://ww1.telecharger-films.net/' },
+        { key: 'telefilm2', name: 'Téléchargement Films', url: 'http://ws.telechargement-films.eu/' },
+        { key: 'telefilm3', name: 'Téléchargement Film', url: 'https://www.telechargement-film.org/' },
+        { key: 'telefilm4', name: 'Films Télécharger', url: 'http://ww4.films-telecharger.eu/film/' },
+        { key: 'fsexclue', name: 'FS exclue', url: 'http://www.fs-exclue.com/' },
+        { key: 'divxtop', name: 'Divxtop', url: 'http://www.divxtop.com/hom.php' },
+      ] },
+        
+      { name: "Téléchargement : ebooks", commands: [
+        { key: 'toutici', name: 'Fourtoutici', url: 'http://www.fourtoutici.xyz/' },
+        { key: 'alex', name: 'Alexandriz', url: 'http://sonia.ombres.org/00-livres/000000-livres/Integrale%20ebooks%20Francais%20(2500%20epub)%20team%20AlexandriZ/' },
+      ] },
+        
+      { name: "Téléchargement : outils", commands: [
+        { key: 'ymp3', name: 'Youtube MP3', url: 'https://telecharger-youtube-mp3.com/' },
+        { key: 'mp3', name: 'Anything MP3', url: 'http://anything2mp3.com/fr' },
+        { key: 'vid', name: 'Télécharger vidéo', url: 'http://www.telechargerunevideo.com/fr/' },
+      ] },
+        
+      { name: "♥", commands: [
+        { key: 'zaclys', name: 'Zaclys', url: 'http://zaclys.com/' },
+        { key: 'framasoft', name: 'Framasoft', url: 'https://framasoft.org/?m=lite' },
+        { key: 'usbek', name: 'Usbek & Rica', url: 'https://usbeketrica.com' },
+      ] },
+        
+    ],
+
+    // if none of the keys are matched, this is used for searching.
+    defaultSearch: 'https://www.google.fr/#q=',
+
+    // the delimiter between the key and your search query.
+    // e.g. to search GitHub for potatoes you'd type "g:potatoes".
+    searchDelimiter: ':',
+
+    // the delimiter between the key and a path.
+    // e.g. type "r/r/unixporn" to go to "reddit.com/r/unixporn".
+    pathDelimiter: '/',
+
+    // set to true to instantly redirect when a key is matched.
+    // put a space before any search queries to prevent unwanted redirects.
+    instantRedirect: false,
+
+    // suggest your most popular queries as you type.
+    suggestions: false,
+
+    // max amount of suggestions to display.
+    suggestionsLimit: 4,
+
+    // open queries in a new tab.
+    newTab: false,
+
+    // the delimiter between the hours and minutes in the clock.
+    clockDelimiter: '&#58;',
+
+    // used for determining when to redirect directly to a url.
+    urlRegex: /^(?:(http|https)?:\/\/)?(?:[\w-]+\.)+([a-z]|[A-Z]|[0-9]){2,6}/i,
+
+    // if "urlRegex" matches but this doesn't, "http://" will be
+    // prepended to the beginning of the query before redirecting.
+    protocolRegex: /^[a-zA-Z]+:\/\//i
+  };
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Homepage</title>
+
+<style type="text/css">
+  @font-face {
+    font-family: 'Lato';
+    src: url('https://fonts.gstatic.com/s/lato/v11/22JRxvfANxSmnAhzbFH8PgLUuEpTyoUstqEm5AMlJo4.woff2') format('woff2');
+  }
+
+  body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    font-family: 'Lato', sans-serif;
+  }
+
+  main {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    width: 90%;
+    max-width: 310px;
+    margin: 0 auto;
+    transform: translateY(-100px);
+    text-align: center;
+  }
+
+  time {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 5rem;
+    letter-spacing: 6px;
+  }
+  
+  #clockDelimiter {
+    color: #E67E22;
+  }
+
+  input, input:focus {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    background: #222;
+    outline: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: #E67E22;
+    font-family: 'Lato', sans-serif;
+  }
+
+  ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .search-input {
+    padding: 12px;
+    border-radius: 2px;
+    font-size: 1.1rem;
+  }
+
+  body[search-suggestions='true'] .search-input {
+    border-radius: 2px 2px 0 0;
+  }
+
+  .search-suggestions {
+    border-radius: 0 0 2px 2px;
+    overflow: hidden;
+  }
+
+  .search-suggestion {
+    padding: 14px 12px;
+    transition: 0.5s;
+    font-size: .8rem;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .search-suggestion:hover, .search-suggestion:focus {
+    background: #30a388;
+  }
+
+  .overlay {
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    padding: 0 10px;
+    transition: 200ms;
+    background: #222;
+    visibility: hidden;
+    opacity: 0;
+    overflow: auto;
+  }
+
+  .overlay[data-toggled='true'] {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .lists {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+    overflow: auto;
+  }
+
+  .category {
+    width: 250px;
+    margin: 10px 5px 0;
+  }
+
+  .category-name {
+    margin: 0;
+    padding: 14px;
+    border-radius: 2px 2px 0 0;
+    background: #E67E22;
+    color: #000;
+    font-size: .7rem;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .command {
+    transition: background 200ms;
+    background: #333;
+  }
+
+  .command:hover {
+    background: #313131;
+  }
+
+  .command:nth-child(even) {
+    background: #3a3a3a;
+  }
+
+  .command:nth-child(even):hover {
+    background: #383838;
+  }
+
+  .command:last-of-type {
+    border-radius: 0 0 2px 2px;
+  }
+
+  .command a {
+    display: block;
+    padding: 5px 5px;
+    color: #eee;
+    font-size: .8rem;
+    line-height: 1.3rem;
+    text-decoration: none;
+  }
+
+  .command-key {
+    display: block;
+    width: 80px;
+    margin-right: 10px;
+    float: left;
+    border-radius: 2px;
+    background: #292929;
+    color: #E67E22;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+  }
+
+  @media (min-width: 740px) {
+    .overlay {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+</style>
+
+<main>
+  <time id="js-clock"></time>
+  <form id="js-search-form" autocomplete="off">
+    <input id="js-search-input" class="search-input" type="text" autofocus>
+    <ul id="js-search-suggestions" class="search-suggestions"></ul>
+  </form>
+</main>
+
+<aside id="js-overlay" class="overlay">
+  <ul id="js-lists" class="lists"></ul>
+</aside>
+
+<script>
+  function $(s) {
+    return document.querySelector(s);
+  };
+
+  var Clock = (function() {
+    var clock = $('#js-clock');
+
+    var pad = function(num) {
+      return ('0' + num.toString()).slice(-2);
+    }
+
+    var setTime = function() {
+      var date = new Date();
+      var hours = pad(date.getHours());
+      var minutes = pad(date.getMinutes());
+
+      clock.innerHTML = hours + "<span id='clockDelimiter'>" + config.clockDelimiter + "</span>" + minutes;
+    }
+
+    setTime();
+    setInterval(setTime, 1000);
+  })();
+
+  var Help = (function() {
+    var overlay = $('#js-overlay');
+    var lists = $('#js-lists');
+
+    config.categories.forEach(function(category) {
+      var commandItems = '';
+
+      category.commands.forEach(function(command) {
+        commandItems += (
+          '<li class="command">' +
+            '<a href="' + command.url + '">' +
+              '<span class="command-key">' + command.key + '</span>' +
+              '<span class="command-name">' + command.name + '</span>' +
+            '</a>' +
+          '</li>'
+        );
+      });
+
+      lists.insertAdjacentHTML(
+        'beforeend',
+        '<li class="category">' +
+          '<h2 class="category-name">' + category.name + '</h2>' +
+          '<ul>' + commandItems + '</ul>' +
+        '</li>'
+      );
+    });
+
+    return {
+      toggle: function(show) {
+        var toggle = typeof show !== 'undefined' ? show :
+          overlay.getAttribute('data-toggled') !== 'true';
+
+        overlay.setAttribute('data-toggled', toggle);
+      }
+    };
+  })();
+
+  var Suggestions = (function() {
+    var searchSuggestions = $('#js-search-suggestions');
+    var queries = JSON.parse(localStorage.getItem('queries')) || [];
+
+    return {
+      add: function(q) {
+        if (q.length < 2) return;
+
+        var exists = false;
+
+        queries.forEach(function(query) {
+          if (query[0] === q) {
+            query[1]++;
+            exists = true;
+          }
+        });
+
+        if (!exists) queries.push([q, 1]);
+
+        queries = queries.sort(function(current, next) {
+          return current[1] > next[1];
+        }).reverse();
+
+        localStorage.setItem('queries', JSON.stringify(queries));
+      },
+
+      show: function(input) {
+        searchSuggestions.innerHTML = '';
+        document.body.setAttribute('search-suggestions', false);
+
+        if (!config.suggestions || !input) return false;
+
+        queries
+          .filter(function(query) {
+            var matchesQuery = query[0].indexOf(input) !== -1;
+            return input && matchesQuery && input !== query[0];
+          })
+          .slice(0, config.suggestionsLimit).forEach(function(query) {
+            searchSuggestions.insertAdjacentHTML(
+              'beforeend',
+              '<li>' +
+                '<input ' +
+                  'class="search-suggestion"' +
+                  'type="button" ' +
+                  'onclick="Form.submitWithThis.call(this)"' +
+                  'value="' + query[0] + '"' +
+                '>' +
+              '</li>'
+            );
+
+            document.body.setAttribute('search-suggestions', true)
+          });
+      }
+    };
+  })();
+
+  var Form = (function() {
+    var searchForm = $('#js-search-form');
+    var searchInput = $('#js-search-input');
+
+    var execute = function(query, redirect) {
+      Suggestions.add(query);
+      Suggestions.show('');
+      searchInput.value = '';
+
+      if (config.newTab) window.open(redirect, '_blank');
+      else window.location.href = redirect;
+    }
+
+    var keyPress = function(event) {
+      var char = String.fromCharCode(event.which);
+
+      if (char.length && event.which !== 13) {
+        Help.toggle(false);
+        searchInput.focus();
+      }
+
+      if (config.instantRedirect) {
+        config.categories.forEach(function(category) {
+          category.commands.forEach(function(command) {
+            var query = searchInput.value + char;
+
+            if (command.key === query) {
+              event.preventDefault();
+              execute(query, command.url);
+            }
+          });
+        });
+      }
+    };
+
+    var submit = function(event) {
+      if (event) event.preventDefault();
+
+      var q = searchInput.value.trim();
+
+      if (!q) {
+        Help.toggle();
+        return false;
+      }
+
+      var qSplitSearch = q.split(config.searchDelimiter);
+      var qSplitPath = q.split(config.pathDelimiter);
+      var qIsUrl = q.match(config.urlRegex);
+      var qHasProtocol = q.match(config.protocolRegex);
+      var redirect = '';
+      var breakLoop = false;
+
+      if (qIsUrl) redirect = qHasProtocol ? q : 'http://' + q;
+      else redirect = config.defaultSearch + encodeURIComponent(q);
+
+      config.categories.forEach(function(category) {
+        category.commands.forEach(function(command) {
+          var isSearch = qSplitSearch[0] === command.key;
+          var isPath = qSplitPath[0] === command.key;
+
+          if (isSearch || isPath) {
+            if (qSplitSearch[1] && command.search && command.add) {
+              qSplitSearch.shift();
+
+              var search = encodeURIComponent(
+                qSplitSearch.join(config.searchDelimiter).trim()
+              );
+
+              redirect = command.url + command.search + search + command.add;
+            } else if (qSplitSearch[1] && command.search && !command.add) {
+              qSplitSearch.shift();
+
+              var search = encodeURIComponent(
+                qSplitSearch.join(config.searchDelimiter).trim()
+              );
+
+              redirect = command.url + command.search + search;
+            } else if (qSplitPath[1]) {
+              qSplitPath.shift();
+              var path = qSplitPath.join(config.pathDelimiter).trim();
+              redirect = command.url + '/' + path;
+            } else {
+              redirect = command.url;
+            }
+
+            breakLoop = true;
+            return;
+          }
+        });
+
+        if (breakLoop) return;
+      });
+
+      execute(q, redirect);
+    }
+
+    var keyUp = function(event) {
+      Suggestions.show(searchInput.value.trim());
+    }
+
+    document.addEventListener('keypress', keyPress);
+    searchForm.addEventListener('submit', submit, false);
+    searchInput.addEventListener('keyup', keyUp);
+
+    return {
+      submitWithThis: function() {
+        searchInput.value = this.value;
+        submit();
+      }
+    };
+  })();
+</script>
