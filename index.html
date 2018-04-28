@@ -6,11 +6,12 @@
   var config = {
     categories: [
       { name: "Vie quotidienne", commands: [
+        { key: 'mail', name: 'Webmail Zaclys', url: 'https://webmail.zaclys.net/roundcubemail/' },
+        { key: 'gmail', name: 'Gmail', url: 'https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin' },
         { key: 'rss', name: 'RSS', url: 'http://rss.cmbnf.fr/' },
         { key: 'bag', name: 'Framabag', url: 'https://framabag.org' },
         { key: 'sh', name: '# Shaarli', url: 'http://shaarli.cmbnf.fr/', search:'?searchterm=' },
         { key: 'o', name: 'OwnCloud', url: 'https://webcloud.zaclys.com/' },
-        { key: 'wp', name: 'WordPress', url: 'http://www.pangurban.fr/zcdrualv/' },
         { key: 'pole', name: 'Pole Emploi', url: 'https://www.pole-emploi.fr' },
         { key: 'meteo17', name: 'Météo 17', url: 'http://france.lachainemeteo.com/meteo-france/ville/previsions-meteo-la-rochelle-2496-0.php' },
         { key: 'meteo85', name: 'Météo 85', url: 'http://france.lachainemeteo.com/meteo-france/ville/previsions-meteo-la-roche-sur-yon-2494-0.php' },
@@ -64,10 +65,12 @@
         { key: '#css', name: '# CSS doc', url: 'https://developer.mozilla.org/fr/', search: 'search?topic=css&q=' },
         { key: '#js', name: '# JS doc', url: 'https://developer.mozilla.org/fr/', search: 'search?topic=js&q=' },
         { key: '#jq', name: '# jQuery doc', url: 'http://api.jquery.com/', search: '?s=' },
+        { key: 'jsinfo', name: 'Javascript info', url: 'http://javascript.info/' },
       ] },
         
       { name: "Code : outils", commands: [
         { key: 'git', name: '# GitHub', url: 'https://github.com', search: '/search?q=' },
+        { key: 'bitbucket', name: 'Bitbucket', url: 'https://bitbucket.org/' },
         { key: 'codepen', name: '# Codepen', url: 'https://codepen.io/', search: 'search/pens?limit=all&type=type-pens&q=' },
         { key: 'fiddle', name: 'JS Fiddle', url: 'https://jsfiddle.net/' },
       ] },
@@ -122,14 +125,17 @@
         { key: 'w3colors', name: 'W3Schools colors', url: 'https://www.w3schools.com/colors/colors_names.asp' },
         { key: '0to255', name: '0to255', url: 'http://www.0to255.com' },
         { key: 'gradient', name: 'UI gradient', url: 'https://uigradients.com/' },
-        /*{ key: 'paletton', name: 'Paletton', url: 'http://paletton.com/' },
-        { key: 'adobecolor', name: 'Adobe Color CC', url: 'https://color.adobe.com/fr/create/color-wheel/' },*/
+        { key: 'webgrad', name: 'Web gradients', url: 'https://webgradients.com/' },
+        { key: 'paletton', name: 'Paletton', url: 'http://paletton.com/' },
+        { key: 'palette', name: 'Site Palette', url: 'http://palette.site/' },
+        { key: 'lol', name: 'LOL colors', url: 'https://www.webdesignrankings.com/resources/lolcolors/' },
       ] },
         
       { name: "Ressources : patterns", commands: [
         { key: 'subtle', name: 'Subtle patterns', url: 'https://www.toptal.com/designers/subtlepatterns/' },
         { key: 'hero', name: 'Hero patterns', url: 'http://www.heropatterns.com/' },
         { key: 'patternlib', name: 'The Pattern library', url: 'http://thepatternlibrary.com/' },
+        { key: 'svgback', name: 'SVG backgrounds', url: 'https://www.svgbackgrounds.com/' },
       ] },
         
       { name: "Ressources : images", commands: [
@@ -144,6 +150,7 @@
         { key: 'duotone', name: 'Duotone', url: 'https://duotone.shapefactory.co/' },
         { key: 'foodies', name: 'Foodies Feed', url: 'https://www.foodiesfeed.com/' },
         { key: 'mazwai', name: 'Mazwai', url: 'http://mazwai.com' },
+        { key: 'uifaces', name: 'UI faces', url: 'https://uifaces.co/' },
       ] },
         
       { name: "Code : inspiration", commands: [
@@ -155,7 +162,7 @@
         { key: 'csstricks', name: 'CSS tricks', url: 'https://css-tricks.com/' },
         { key: 'codyhouse', name: 'Codyhouse', url: 'https://codyhouse.co/library/' },
         { key: 'calltoidea', name: 'Calltoidea', url: 'http://calltoidea.com/' },
-        { key: 'dribble', name: 'Dribble', url: 'https://dribbble.com/' },
+        { key: 'dribbble', name: 'Dribbble', url: 'https://dribbble.com/' },
         { key: 'behance', name: 'Behance', url: 'https://www.behance.net/' },
         { key: 'siteinspi', name: 'Site Inspire', url: 'https://www.siteinspire.com/' },
         { key: 'flatdesign', name: 'Flatdsgn', url: 'http://flatdsgn.com/' },
