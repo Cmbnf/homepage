@@ -3,9 +3,15 @@ var links = [
         { key: 'm', name: 'Webmail Zaclys', url: 'https://webmail.zaclys.net/roundcubemail/' },
         { key: 'gmail', name: 'Gmail', url: 'https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin' },
         { key: 'cloud', name: 'Nextcloud', url: 'https://ncloud.zaclys.com/index.php/apps/files/?dir=/&fileid=92537519' },
+        { key: 'dy', name: 'Dynalist', url: 'https://dynalist.io/d/QpBwOW_nwlP0jKda9rICjPEq' },
         { key: 'ag', name: 'Agenda', url: 'https://ncloud.zaclys.com/index.php/apps/calendar/' },
+        { key: 'dy', name: 'Dynalist', url: 'https://dynalist.io/' },
         { key: 'fb', name: 'Facebook', url: 'https://fr-fr.facebook.com/' },
         { key: 'pin', name: 'Pinterest', url: 'https://fr.pinterest.com/' },
+        { key: 'feed', name: 'Feedly', url: 'https://feedly.com/' },
+        { key: 'pocket', name: 'Pocket', url: 'https://app.getpocket.com/' },
+        { key: 'rain', name: 'Raindrop', url: 'https://app.raindrop.io/' },
+        { key: 'ag', name: 'Agenda', url: 'https://ncloud.zaclys.com/index.php/apps/calendar/' },
     ] },
 
     { name: "Recherche", commands: [
@@ -35,9 +41,14 @@ var links = [
         { key: 'canva', name: 'Canva', url: 'https://www.canva.com' },
         { key: 'framapic', name: 'Framapic', url: 'https://framapic.org/' },
         { key: 'optimiz', name: 'Optimizilla', url: 'http://optimizilla.com/' },
+        { key: 'clocki', name: 'Clockify', url: 'https://clockify.me/' },
+        { key: 'mdp', name: 'Générateur mdp', url: 'https://www.motdepasse.xyz/' },
     ] },
 
     { name: "Code : ressources", commands: [
+        { key: '>', name: 'Wikicode', url: 'file:///home/cam/Projets/wikicode/wikicode.html' },
+        { key: 'localhost', name: 'localhost', url: 'http://localhost/' },
+        { key: 'projets', name: 'projets', url: 'file:///home/cam/Projets/' },
         { key: 'git', name: '# GitHub', url: 'https://github.com', search: '/search?q=' },
         { key: 'oc', name: 'Open Classrooms', url: 'https://openclassrooms.com/' },
         { key: 'codeac', name: 'Code Academy', url: 'https://www.codecademy.com/fr' },
@@ -46,6 +57,8 @@ var links = [
         { key: 'w3c', name: 'W3C validator', url: 'https://validator.w3.org/' },
         { key: 'caniuse', name: 'Can I use', url: 'https://caniuse.com/' },
         { key: 'autoprefix', name: 'Autoprefixer', url: 'https://autoprefixer.github.io/' },
+        { key: 'wireflow', name: 'Wireflow', url: 'https://wireflow.co/' },
+        { key: 'divi', name: 'Divi Library', url: 'https://www.elegantthemes.com/layouts/' },
     ] },
 
     { name: "Ressources : images", commands: [
