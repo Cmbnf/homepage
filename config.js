@@ -1,8 +1,8 @@
 var config = {
     
     // if none of the keys are matched, this is used for searching.
-    // defaultSearch: 'https://www.google.fr/#q=',
-    defaultSearch: 'https://search.lilo.org/searchweb.php?q=',
+    defaultSearch: 'https://www.google.fr/#q=',
+    // defaultSearch: 'https://search.lilo.org/searchweb.php?q=',
 
     // the delimiter between the key and your search query.
     // e.g. to search GitHub for potatoes you'd type "g:potatoes".

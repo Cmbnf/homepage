@@ -6,14 +6,12 @@ var links = [
         { key: 'dy', name: 'Dynalist', url: 'https://dynalist.io/d/QpBwOW_nwlP0jKda9rICjPEq' },
         { key: 'ag', name: 'Agenda', url: 'https://ncloud.zaclys.com/index.php/apps/calendar/' },
         { key: 'dy', name: 'Dynalist', url: 'https://dynalist.io/' },
-        { key: 'fb', name: 'Facebook', url: 'https://fr-fr.facebook.com/' },
-        { key: 'pin', name: 'Pinterest', url: 'https://fr.pinterest.com/' },
         { key: 'feed', name: 'Feedly', url: 'https://feedly.com/' },
         { key: 'pocket', name: 'Pocket', url: 'https://app.getpocket.com/' },
         { key: 'rain', name: 'Raindrop', url: 'https://app.raindrop.io/' },
         { key: 'ag', name: 'Agenda', url: 'https://ncloud.zaclys.com/index.php/apps/calendar/' },
     ] },
-
+    
     { name: "Recherche", commands: [
         { key: 'gi', name: '# Google Images', url: 'https://www.google.fr', search: '/#q=', add: '&safe=active&tbm=isch' },
         { key: 'w', name: '# Wikipédia', url: 'https://fr.wikipedia.org/wiki', search: '/' },
@@ -21,7 +19,7 @@ var links = [
         { key: 'y', name: '# Youtube', url: 'https://www.youtube.com', search: '/results?search_query=' },
         { key: 'map', name: '# Google Maps', url: 'https://www.google.fr/maps/search', search: '/' },
     ] },
-
+    
     { name: "Dictionnaires", commands: [
         { key: 'en', name: '# WordRef EN-FR', url: 'http://www.wordreference.com', search: '/enfr/' },
         { key: 'fr', name: '# WordRef FR-EN', url: 'http://www.wordreference.com', search: '/fren/' },
@@ -29,11 +27,15 @@ var links = [
         { key: 'sy', name: '# Synonymes', url: 'http://www.synonymes.com', search: '/synonyme.php?mot=' },
         { key: 'cj', name: '# Conjugaison', url: 'http://leconjugueur.lefigaro.fr', search: '/conjugaison/verbe/' },
     ] },
-
+    
     { name: "Réseaux", commands: [
+        { key: 'fb', name: 'Facebook', url: 'https://fr-fr.facebook.com/' },
+        { key: 'pin', name: 'Pinterest', url: 'https://fr.pinterest.com/' },
+        { key: 'insta', name: 'Instagram', url: 'https://www.instagram.com/' },
         { key: 'tw', name: 'Twitter', url: 'https://twitter.com/Cm_Bnf/' },
         { key: 'li', name: 'LinkedIn', url: 'http://fr.linkedin.com/in/camillebonenfant' },
         { key: 'via', name: 'Viadeo', url: 'http://viadeo.fr/profile/camillebonenfant' },
+        { key: 'later', name: 'Later', url: 'https://app.later.com/' },
     ] },
 
     { name: "Outils", commands: [
@@ -42,12 +44,11 @@ var links = [
         { key: 'framapic', name: 'Framapic', url: 'https://framapic.org/' },
         { key: 'optimiz', name: 'Optimizilla', url: 'http://optimizilla.com/' },
         { key: 'clocki', name: 'Clockify', url: 'https://clockify.me/' },
+        { key: 'char', name: 'Special characters', url: 'hhttps://brajeshwar.github.io/entities/' },
         { key: 'mdp', name: 'Générateur mdp', url: 'https://www.motdepasse.xyz/' },
     ] },
 
     { name: "Code : ressources", commands: [
-        { key: '>', name: 'Wikicode', url: 'file:///home/cam/Projets/wikicode/wikicode.html' },
-        { key: 'localhost', name: 'localhost', url: 'http://localhost/' },
         { key: 'projets', name: 'projets', url: 'file:///home/cam/Projets/' },
         { key: 'git', name: '# GitHub', url: 'https://github.com', search: '/search?q=' },
         { key: 'oc', name: 'Open Classrooms', url: 'https://openclassrooms.com/' },
@@ -100,6 +101,7 @@ var links = [
         { key: 'fontaw', name: 'Font Awesome', url: 'https://fontawesome.com/icons?d=gallery' },
         { key: 'fontawcss', name: 'Font Awesome CSS', url: 'http://astronautweb.co/snippet/font-awesome/' },
         { key: 'flaticon', name: 'Flaticon', url: 'https://www.flaticon.com/' },
+        { key: 'preloader', name: 'Preloader', url: 'https://loading.io/' },
     ] },
 
     { name: "Design : inspiration", commands: [
