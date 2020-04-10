@@ -2,14 +2,17 @@ var links = [
     { name: "Vie quotidienne", commands: [
         { key: 'm', name: 'Webmail Zaclys', url: 'https://webmail.zaclys.net/roundcubemail/' },
         { key: 'gmail', name: 'Gmail', url: 'https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin' },
-        { key: 'cloud', name: 'Nextcloud', url: 'https://ncloud.zaclys.com/index.php/apps/files/?dir=/&fileid=92537519' },
+        { key: 'cloud', name: 'Nextcloud', url: 'https://nclood.zaclys.com/' },
         { key: 'dy', name: 'Dynalist', url: 'https://dynalist.io/d/QpBwOW_nwlP0jKda9rICjPEq' },
-        { key: 'ag', name: 'Agenda', url: 'https://ncloud.zaclys.com/index.php/apps/calendar/' },
+        { key: 'ag', name: 'Agenda', url: 'https://nclood.zaclys.com/index.php/apps/calendar/' },
         { key: 'dy', name: 'Dynalist', url: 'https://dynalist.io/' },
         { key: 'feed', name: 'Feedly', url: 'https://feedly.com/' },
         { key: 'pocket', name: 'Pocket', url: 'https://app.getpocket.com/' },
         { key: 'rain', name: 'Raindrop', url: 'https://app.raindrop.io/' },
-        { key: 'ag', name: 'Agenda', url: 'https://ncloud.zaclys.com/index.php/apps/calendar/' },
+        { key: 'malt', name: 'Malt', url: 'https://www.malt.fr/' },
+        { key: 'pe', name: 'Pôle Emploi', url: 'https://www.pole-emploi.fr/accueil/' },
+        { key: 'urssaf', name: 'URSSAF', url: 'https://www.autoentrepreneur.urssaf.fr/portail/accueil.html' },
+        { key: 'repondeur', name: 'Répondeur Orange', url: 'https://login.orange.fr/?cas=nowg&return_url=https://boitevocale5w.orange.fr/' },
     ] },
     
     { name: "Recherche", commands: [
@@ -40,12 +43,14 @@ var links = [
 
     { name: "Outils", commands: [
         { key: 'timer', name: 'Timer Tab', url: 'http://www.timer-tab.com/' },
+        { key: 'soundrown', name: 'Soundrown', url: 'https://soundrown.com/' },
         { key: 'canva', name: 'Canva', url: 'https://www.canva.com' },
         { key: 'framapic', name: 'Framapic', url: 'https://framapic.org/' },
         { key: 'optimiz', name: 'Optimizilla', url: 'http://optimizilla.com/' },
         { key: 'clocki', name: 'Clockify', url: 'https://clockify.me/' },
         { key: 'char', name: 'Special characters', url: 'hhttps://brajeshwar.github.io/entities/' },
         { key: 'mdp', name: 'Générateur mdp', url: 'https://www.motdepasse.xyz/' },
+        { key: 'adwords', name: 'Google Adwords', url: 'https://ads.google.com/aw/keywordplanner/home' },
     ] },
 
     { name: "Code : ressources", commands: [
@@ -74,6 +79,10 @@ var links = [
         { key: 'duotone', name: 'Duotone', url: 'https://duotone.shapefactory.co/' },
         { key: 'mazwai', name: 'Mazwai', url: 'http://mazwai.com' },
         { key: 'uifaces', name: 'UI faces', url: 'https://uifaces.co/' },
+        { key: 'undraw', name: 'unDraw', url: 'https://undraw.co/illustrations' },
+        { key: 'Drawkit', name: 'Drawkit', url: 'https://www.drawkit.io/free' },
+        { key: 'icons8', name: 'Icons8', url: 'https://icons8.com/ouch' },
+        { key: 'lukas', name: 'Lukas Zadam', url: 'https://lukaszadam.com/illustrations' },
     ] },
 
     { name: "Ressources : couleurs", commands: [
@@ -89,6 +98,9 @@ var links = [
         { key: '100pal', name: '100 palettes', url: 'https://www.canva.com/learn/100-color-combinations/' },
         { key: 'gradient', name: 'UI gradient', url: 'https://uigradients.com/' },
         { key: 'webgrad', name: 'Web gradients', url: 'https://webgradients.com/' },
+        { key: 'colormind', name: 'Colormind', url: 'http://colormind.io/image/' },
+        { key: 'opencolor', name: 'Open Color', url: 'https://yeun.github.io/open-color' },
+        { key: 'cohesive', name: 'Cohesive color', url: 'https://javier.xyz/cohesive-colors/' },
     ] },
 
     { name: "Ressources : polices & icônes", commands: [
@@ -118,6 +130,7 @@ var links = [
         { key: 'hero', name: 'Hero patterns', url: 'http://www.heropatterns.com/' },
         { key: 'patternlib', name: 'The Pattern library', url: 'http://thepatternlibrary.com/' },
         { key: 'svgback', name: 'SVG backgrounds', url: 'https://www.svgbackgrounds.com/' },
+        { key: 'mazletter', name: 'Mazeletter', url: 'http://mazeletter.xyz/' },
     ] },
 
 ];
