@@ -2,9 +2,9 @@ var links = [
     { name: "Vie quotidienne", commands: [
         { key: 'm', name: 'Webmail Zaclys', url: 'https://webmail.zaclys.net/roundcubemail/' },
         { key: 'gmail', name: 'Gmail', url: 'https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin' },
-        { key: 'cloud', name: 'Nextcloud', url: 'https://nclood.zaclys.com/' },
+        { key: 'cloud', name: 'Nextcloud', url: 'https://acloud.zaclys.com/' },
         { key: 'dy', name: 'Dynalist', url: 'https://dynalist.io/d/QpBwOW_nwlP0jKda9rICjPEq' },
-        { key: 'ag', name: 'Agenda', url: 'https://nclood.zaclys.com/index.php/apps/calendar/' },
+        { key: 'ag', name: 'Agenda', url: 'https://acloud.zaclys.com/index.php/apps/calendar/' },
         { key: 'dy', name: 'Dynalist', url: 'https://dynalist.io/' },
         { key: 'feed', name: 'Feedly', url: 'https://feedly.com/' },
         { key: 'pocket', name: 'Pocket', url: 'https://app.getpocket.com/' },
@@ -47,10 +47,13 @@ var links = [
         { key: 'canva', name: 'Canva', url: 'https://www.canva.com' },
         { key: 'framapic', name: 'Framapic', url: 'https://framapic.org/' },
         { key: 'optimiz', name: 'Optimizilla', url: 'http://optimizilla.com/' },
-        { key: 'clocki', name: 'Clockify', url: 'https://clockify.me/' },
+        { key: 'pdfcompress', name: 'PDF Compressor', url: 'https://pdfcompressor.com/' },
+        { key: 'cache', name: 'Vider Cache', url: 'https://vider-mon-cache.fr/' },
+        { key: 'clock', name: 'Clockify', url: 'https://clockify.me/' },
         { key: 'char', name: 'Special characters', url: 'hhttps://brajeshwar.github.io/entities/' },
         { key: 'mdp', name: 'Générateur mdp', url: 'https://www.motdepasse.xyz/' },
         { key: 'adwords', name: 'Google Adwords', url: 'https://ads.google.com/aw/keywordplanner/home' },
+        { key: 'search', name: 'Google Search', url: 'https://search.google.com/search-console?resource_id=sc-domain%3Acamille-bonenfant.fr' },
     ] },
 
     { name: "Code : ressources", commands: [
@@ -65,6 +68,7 @@ var links = [
         { key: 'autoprefix', name: 'Autoprefixer', url: 'https://autoprefixer.github.io/' },
         { key: 'wireflow', name: 'Wireflow', url: 'https://wireflow.co/' },
         { key: 'divi', name: 'Divi Library', url: 'https://www.elegantthemes.com/layouts/' },
+        { key: 'mobile', name: 'Mobile Test', url: 'http://mobiletest.me/' },
     ] },
 
     { name: "Ressources : images", commands: [
