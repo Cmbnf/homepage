@@ -12,7 +12,7 @@ var links = [
         { key: 'malt', name: 'Malt', url: 'https://www.malt.fr/' },
         { key: 'pe', name: 'Pôle Emploi', url: 'https://www.pole-emploi.fr/accueil/' },
         { key: 'urssaf', name: 'URSSAF', url: 'https://www.autoentrepreneur.urssaf.fr/portail/accueil.html' },
-        { key: 'repondeur', name: 'Répondeur Orange', url: 'https://login.orange.fr/?cas=nowg&return_url=https://boitevocale5w.orange.fr/' },
+        { key: 'ikouladmin', name: 'Ikoula', url: 'https://linheb01.ikoula.nl:8443/login_up.php' },
     ] },
     
     { name: "Recherche", commands: [
@@ -39,6 +39,7 @@ var links = [
         { key: 'li', name: 'LinkedIn', url: 'http://fr.linkedin.com/in/camillebonenfant' },
         { key: 'via', name: 'Viadeo', url: 'http://viadeo.fr/profile/camillebonenfant' },
         { key: 'later', name: 'Later', url: 'https://app.later.com/' },
+        { key: 'greview', name: 'Google Review', url: 'https://www.google.com/maps/place/Camille+Bonenfant/@46.6116792,-1.5802006,17z/data=!3m1!4b1!4m5!3m4!1s0x480439dcdd4636a9:0x3e60c3e8d6fbbd5b!8m2!3d46.6116792!4d-1.5780119' },
     ] },
 
     { name: "Outils", commands: [
@@ -87,6 +88,7 @@ var links = [
         { key: 'Drawkit', name: 'Drawkit', url: 'https://www.drawkit.io/free' },
         { key: 'icons8', name: 'Icons8', url: 'https://icons8.com/ouch' },
         { key: 'lukas', name: 'Lukas Zadam', url: 'https://lukaszadam.com/illustrations' },
+        { key: 'vectorbg', name: 'Vector Backgrounds', url: 'https://www.rawpixel.com/board/380056/beautiful-background-vector-high-resolution-royalty-free-stock-vector?sort=curated&mode=shop&page=1' },
     ] },
 
     { name: "Ressources : couleurs", commands: [
@@ -107,7 +109,7 @@ var links = [
         { key: 'cohesive', name: 'Cohesive color', url: 'https://javier.xyz/cohesive-colors/' },
     ] },
 
-    { name: "Ressources : polices & icônes", commands: [
+    { name: "Ressources : polices", commands: [
         { key: 'font', name: 'Font Library', url: 'https://fontlibrary.org/fr' },
         { key: 'gfonts', name: 'Google Fonts', url: 'https://www.google.com/fonts' },
     ] },
@@ -118,6 +120,7 @@ var links = [
         { key: 'fontawcss', name: 'Font Awesome CSS', url: 'http://astronautweb.co/snippet/font-awesome/' },
         { key: 'flaticon', name: 'Flaticon', url: 'https://www.flaticon.com/' },
         { key: 'preloader', name: 'Preloader', url: 'https://loading.io/' },
+        { key: 'favicon', name: 'Favicon', url: 'https://favicon.io/' },
     ] },
 
     { name: "Design : inspiration", commands: [
